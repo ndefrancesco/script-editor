@@ -143,7 +143,7 @@ public class TextEditorTab extends JSplitPane {
 
 		screen.setEditable(false);
 		screen.setLineWrap(true);
-		screen.setFont(new Font("Courier", Font.PLAIN, 12));
+		//screen.setFont(new Font("Courier", Font.PLAIN, 12));
 
 		final JPanel bottom = new JPanel();
 		bottom.setLayout(new GridBagLayout());
@@ -244,12 +244,14 @@ public class TextEditorTab extends JSplitPane {
 		bc.gridwidth = 8;
 		screen.setEditable(false);
 		screen.setLineWrap(true);
-		final Font font = new Font("Courier", Font.PLAIN, 12);
+		final Font font = new Font("Monospaced", Font.PLAIN, 12);
 		screen.setFont(font);
 		scroll = new JScrollPane(screen);
 		bottom.add(scroll, bc);
 		
 		prompt.setEnabled(false);
+		prompt.setFont(font);
+		prompt.setTabSize(4);
 		
 		final JPanel prompt_panel = new JPanel();
 		prompt_panel.setMinimumSize(new Dimension(0, 0));
